@@ -5,10 +5,6 @@
       "src": "shop/backend/ipace/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
-    },
-    {
-      "src": "shop/frontend/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -17,16 +13,8 @@
       "dest": "shop/backend/static/$1"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "shop/backend/ipace/wsgi.py"
-    },
-    {
-      "src": "/admin/(.*)",
-      "dest": "shop/backend/ipace/wsgi.py"
-    },
-    {
       "src": "/(.*)",
-      "dest": "shop/frontend/$1"
+      "dest": "shop/backend/ipace/wsgi.py"
     }
   ]
 }
