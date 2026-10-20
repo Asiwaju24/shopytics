@@ -1,4 +1,4 @@
-# iPace — Shop Manager
+# Shopytics — Shop Manager
 
 A complete shop-management system for small businesses: point of sale, stock control,
 purchasing, customers & debts, expenses and profit reports.
@@ -96,10 +96,3 @@ Being upfront so nobody is surprised:
 * **Forecasts are simple averages**, labelled as such — not a trained machine-learning model.
 * **No automatic payment of debts via bank integration, no barcode *generation*, no product photos upload.**
   (Barcode *scanning* works with any USB/Bluetooth scanner that types into a field.)
-
-## Security notes
-
-* Never commit `.env` or a database file (`.gitignore` covers both).
-* If a previous copy of this project had a `.env` with a real secret key, rotate it.
-* Create staff accounts with the **Team** page rather than sharing one login — sales and stock changes
-  are recorded against the person who made them.
