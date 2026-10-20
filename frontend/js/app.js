@@ -67,7 +67,7 @@ async function signOut(notice) {
 function authCard(title, subtitle, ...children) {
   return h('div', { class: 'auth-wrap' },
     h('div', { class: 'auth-card' },
-      h('div', { class: 'brand', style: { padding: 0 } }, h('div', { class: 'brand-mark' }, 'iP'), 'iPace'),
+      h('div', { class: 'brand', style: { padding: 0 } }, h('div', { class: 'brand-mark' }, 'ST'), 'Shopytics'),
       h('h1', null, title),
       h('div', { class: 'sub' }, subtitle),
       ...children,
@@ -122,7 +122,7 @@ function showAuth(mode = 'login', notice) {
   const switchLink = h('a', { onclick: () => showAuth(isLogin ? 'register' : 'login') }, isLogin ? 'Create one' : 'Sign in');
   replaceContent(root, authCard(
     isLogin ? 'Sign in' : 'Create your account',
-    isLogin ? 'Manage your shop — sales, stock and customers.' : 'Set up iPace for your business.',
+    isLogin ? 'Manage your shop — sales, stock and customers.' : 'Set up Shopytics for your business.',
     form.el,
     h('div', { class: 'auth-switch' }, isLogin ? "Don't have an account? " : 'Already have an account? ', switchLink),
   ));
@@ -182,7 +182,7 @@ function renderShell() {
       }, icon(p.icon), p.label)))));
 
   sidebar = h('aside', { class: 'sidebar' },
-    h('div', { class: 'brand' }, h('div', { class: 'brand-mark' }, 'iP'), 'iPace'),
+    h('div', { class: 'brand' }, h('div', { class: 'brand-mark' }, 'ST'), 'Shopytics'),
     nav,
     h('div', { class: 'sidebar-foot muted' }, state.store.name, h('br'), ROLE_LABELS[state.role] || 'No access'),
   );
@@ -229,7 +229,7 @@ async function route() {
     page = PAGES[0];
   }
   sidebar.querySelectorAll('.nav-link').forEach((a) => a.classList.toggle('active', a.dataset.path === page.path));
-  document.title = `${page.label} — iPace`;
+  document.title = `${page.label} — Shopytics`;
 
   if (cleanup) { try { cleanup(); } catch (e) { /* page teardown must never block navigation */ } cleanup = null; }
   replaceContent(content, spinner());
