@@ -2,31 +2,31 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/shopytics/wsgi.py",
+      "src": "shop/backend/ipace/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
     },
     {
-      "src": "frontend/**",
+      "src": "shop/frontend/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "backend/static/$1"
+      "dest": "shop/backend/static/$1"
     },
     {
       "src": "/api/(.*)",
-      "dest": "backend/shopytics/wsgi.py"
+      "dest": "shop/backend/ipace/wsgi.py"
     },
     {
       "src": "/admin/(.*)",
-      "dest": "backend/shopytics/wsgi.py"
+      "dest": "shop/backend/ipace/wsgi.py"
     },
     {
       "src": "/(.*)",
-      "dest": "frontend/$1"
+      "dest": "shop/frontend/$1"
     }
   ]
 }
