@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "shop/backend/ipace/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.11" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/shop/backend/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "shop/backend/ipace/wsgi.py"
+    }
+  ]
+}
