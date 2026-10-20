@@ -4,6 +4,6 @@
   var devPorts = ['3000', '5173', '5500', '5501', '8080', '8081', '8888'];
   var onDevServer = location.protocol === 'file:' || devPorts.indexOf(location.port) !== -1;
   window.APP_CONFIG = {
-    API_BASE_URL: onDevServer ? 'http://localhost:8000/api' : '/api',
+    API_BASE_URL: onDevServer ? 'https://shopytics.vercel.app/api' : '/api',
   };
 })();
